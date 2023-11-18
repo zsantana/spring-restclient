@@ -1,80 +1,48 @@
 # Spring boot - RestClient
 
-{
-  "openapi": "3.0.1",
-  "info": {
-    "title": "Swagger OpenApi",
-    "description": "API de integração Rest-Client",
-    "version": "1"
-  },
-  "servers": [
-    {
-      "url": "http://localhost:8080",
-      "description": "Generated server url"
-    }
-  ],
-  "paths": {
-    "/cred-cards/api/v1/eligibility/check": {
-      "get": {
-        "tags": [
-          "open-api"
-        ],
-        "summary": "Verifica a elegibilidade do cartão",
-        "operationId": "obterElegilidade",
-        "responses": {
-          "200": {
-            "description": "Consulta realizada com sucesso",
-            "content": {
-              "/": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Parametros inválidos",
-            "content": {
-              "/": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Requisição não encontrada",
-            "content": {
-              "/": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Requisição inválida",
-            "content": {
-              "/": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Erro ao realizar o upload de arquivo",
-            "content": {
-              "/": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "components": {}
-}
+# Swagger OpenApi
+
+Este é um exemplo de arquivo OpenAPI no formato 3.0.1 para uma API de integração Rest-Client.
+
+## Informações
+
+- **Título:** Swagger OpenApi
+- **Descrição:** API de integração Rest-Client
+- **Versão:** 1
+
+## Servidores
+
+- **URL:** http://localhost:8080
+- **Descrição:** URL do servidor gerado
+
+## Endpoints
+
+### Verificar Elegibilidade do Cartão
+
+- **Caminho:** /cred-cards/api/v1/eligibility/check
+- **Método:** GET
+- **Tags:** open-api
+- **Resumo:** Verifica a elegibilidade do cartão
+- **Operation ID:** obterElegilidade
+
+#### Respostas
+
+- **200 OK**
+  - **Descrição:** Consulta realizada com sucesso
+  - **Conteúdo:** Tipo de objeto
+
+- **400 Bad Request**
+  - **Descrição:** Parâmetros inválidos
+  - **Conteúdo:** Tipo de objeto
+
+- **404 Not Found**
+  - **Descrição:** Requisição não encontrada
+  - **Conteúdo:** Tipo de objeto
+
+- **422 Unprocessable Entity**
+  - **Descrição:** Requisição inválida
+  - **Conteúdo:** Tipo de objeto
+
+- **500 Internal Server Error**
+  - **Descrição:** Erro ao realizar o upload de arquivo
+  - **Conteúdo:** Tipo de objeto
