@@ -2,6 +2,8 @@ package br.com.xbinario.restclient.services.impl;
 
 import java.util.Collections;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
@@ -12,11 +14,10 @@ import br.com.xbinario.restclient.domain.PagedResponse;
 import br.com.xbinario.restclient.exceptions.ElegibilidadeClientException;
 import br.com.xbinario.restclient.services.ElegibilidadeClient;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Service
 public class ElegibilidadeClientImpl implements ElegibilidadeClient {
+
+    private static Logger log = LoggerFactory.getLogger(ElegibilidadeClientImpl.class);
 
     @Value("${URL}")
     String url;
@@ -36,8 +37,9 @@ public class ElegibilidadeClientImpl implements ElegibilidadeClient {
 
             final Elegibilidade response = restTemplate.getForObject( this.url, Elegibilidade.class);
 
-            PagedResponse<Elegibilidade> retorno = new PagedResponse<>();
-            retorno.setContent(Collections.singletonList(response));
+            var retorno = new PagedResponse.Builder<Elegibilidade>()
+                                           .content(Collections.singletonList(response))
+                                           .build();
 
             return retorno;
 

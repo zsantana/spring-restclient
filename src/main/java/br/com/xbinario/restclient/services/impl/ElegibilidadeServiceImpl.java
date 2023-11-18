@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.xbinario.restclient.domain.Elegibilidade;
-import br.com.xbinario.restclient.domain.PagedResponse;
 import br.com.xbinario.restclient.services.ElegibilidadeService;
 import br.com.xbinario.restclient.services.ElegibilidadeClient;
 
@@ -19,8 +18,7 @@ public class ElegibilidadeServiceImpl implements ElegibilidadeService {
     }
 
     public List<Elegibilidade> getEligibility() {
-        final PagedResponse<Elegibilidade> response = eligibilityClient.getEligibility();
-        return response.getContent();
+        return eligibilityClient.getEligibility().content();
     }
 
 }

@@ -56,9 +56,7 @@ public class ElegibilidadeController {
 
         } catch (ElegibilidadeClientException e) {
 
-            RetornoErroDTO retornoErroDTO = new RetornoErroDTO();
-            retornoErroDTO.setCodErro("500");
-            retornoErroDTO.setMsgErro(e.getMessage());
+            var retornoErroDTO = new RetornoErroDTO("500", e.getMessage());
 
             return (ResponseEntity<T>) ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
