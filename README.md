@@ -25,7 +25,7 @@
           "200": {
             "description": "Consulta realizada com sucesso",
             "content": {
-              "*/*": {
+              "/": {
                 "schema": {
                   "type": "object"
                 }
@@ -35,7 +35,7 @@
           "400": {
             "description": "Parametros inválidos",
             "content": {
-              "*/*": {
+              "/": {
                 "schema": {
                   "type": "object"
                 }
@@ -45,7 +45,7 @@
           "404": {
             "description": "Requisição não encontrada",
             "content": {
-              "*/*": {
+              "/": {
                 "schema": {
                   "type": "object"
                 }
@@ -55,7 +55,7 @@
           "422": {
             "description": "Requisição inválida",
             "content": {
-              "*/*": {
+              "/": {
                 "schema": {
                   "type": "object"
                 }
@@ -65,7 +65,7 @@
           "500": {
             "description": "Erro ao realizar o upload de arquivo",
             "content": {
-              "*/*": {
+              "/": {
                 "schema": {
                   "type": "object"
                 }
